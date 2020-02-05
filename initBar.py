@@ -7,9 +7,9 @@ HOT = 100
 COLD = 10
 
 hotSites = [(5,5)]
-coldSites = [(2,2)]
+coldSites = [(2,2),(7,7)]
 
-t = 10
+t = 50
 diffusionRate = 0.01
 def initBar(m, n, hotSites, coldSites):
     import numpy as np
@@ -40,4 +40,3 @@ def diffusionSim(m,n, diffusionRate, t):
         
     return grids
 
-animDiffusionGray(diffusionSim(10,10, diffusionRate, t))
