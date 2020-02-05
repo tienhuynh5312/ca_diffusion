@@ -1,6 +1,7 @@
 import numpy as np
-import Diffusion.py as d
 
+def diffusion(diffusionRate, site, N, NE, E, SE, S, SW, W, NW):
+    return(1-8*diffusionRate)*site + diffusionRate*(N + NE + E +  SE + S + SW + W + NW)
 #Returns the lattice with extended boundary removed,
 # and applys diffusion to all cells
 def applyDiffusionExtended(latExt, diffusionRate): 
@@ -16,5 +17,5 @@ def applyDiffusionExtended(latExt, diffusionRate):
             SW = latExt[i + 1][j - 1]
             W = latExt[i][j - 1]
             NW = latExt[i - 1][j - 1]
-            diffused[i - 1][j - 1] = d.diffusion(latExt[i][j], site, N, NE, SE, S, SW, W, NW)
+            diffused[i - 1][j - 1] = diffusion(latExt[i][j], site, N, NE, SE, S, SW, W, NW)
     return diffused 
