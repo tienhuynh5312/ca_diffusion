@@ -1,1 +1,20 @@
+AMBIENT = 25
+HOT = 100
+COLD = 10
+def initBar(m, n, hotSites, coldSites):
+    import numpy as np
+    
+    #- Init bar
+    site = np.full((m,n), AMBIENT)
+    
+    return applyHotCold(site, hotSites, coldSites)
 
+def applyHotCold(site, hotSites, coldSites):
+    #- apple hot 
+    for i in hotSites:
+        site[i[0],i[1]] = HOT
+    
+    for i in coldSites:
+        site[i[0],i[1]] = COLD
+    
+    return site
