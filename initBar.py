@@ -1,3 +1,7 @@
+import animDiffusionGray.py as animate
+import applyDiffusionExtended.py as ade
+import reflectingLay.py as rl 
+
 AMBIENT = 25
 HOT = 100
 COLD = 10
@@ -23,8 +27,8 @@ def diffusionSim(m,n, diffusionRate, t):
     bar = initBar(m,n, hotSites, coldSites)
     grids = [bar]
     for i in range(t):
-        barExtended = reflectinglat(bar)
-        bar = applyDiffusionExtended(diffusionRate, barExtended)
+        barExtended = rl.reflectinglat(bar)
+        bar = ade.applyDiffusionExtended(diffusionRate, barExtended)
         bar = applyHotCold(bar, hotSites, coldSites)
         grids.append(bar)
         
