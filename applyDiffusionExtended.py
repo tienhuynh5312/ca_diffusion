@@ -4,7 +4,7 @@ import Diffusion.py as d
 #Returns the lattice with extended boundary removed,
 # and applys diffusion to all cells
 def applyDiffusionExtended(latExt, diffusionRate): 
-    diffused = np.zeros(len(latExt) - 2, len(latExt[0:]) - 2)
+    diffused = np.zeros(len(latExt) - 2, len(latExt[0]) - 2)
     for i in range(0, len(latExt) - 1): 
         for j in range(0, len(latExt[0]) - 1): 
             site = latExt[i][j]
