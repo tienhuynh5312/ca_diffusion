@@ -4,8 +4,8 @@ def diffusion(diffusionRate, site, N, NE, E, SE, S, SW, W, NW):
     return(1-8*diffusionRate)*site + diffusionRate*(N + NE + E +  SE + S + SW + W + NW)
 #Returns the lattice with extended boundary removed,
 # and applys diffusion to all cells
-def applyDiffusionExtended(latExt, diffusionRate): 
-    diffused = np.zeros(len(latExt) - 2, len(latExt[0]) - 2)
+def applyDiffusionExtended(diffusionRate, latExt): 
+    diffused = np.zeros((np.shape(latExt)[0] - 2, np.shape(latExt)[1] - 2))
     for i in range(1, len(latExt) - 1): 
         for j in range(1, len(latExt[0]) - 1): 
             site = latExt[i][j]

@@ -31,6 +31,5 @@ def reflectingLat(lat):
     reflectedLat[0][columns + 1] = reflectedLat[1][columns + 1]
     reflectedLat[rows + 1][columns + 1] = reflectedLat[rows][columns + 1]
     reflectedLat[rows + 1][0]  = reflectedLat[rows][0]
+    
     return reflectedLat     
-
-print(reflectingLat(lat))
