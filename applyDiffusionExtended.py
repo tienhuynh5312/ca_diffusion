@@ -9,14 +9,14 @@ def applyDiffusionExtended(diffusionRate, latExt):
     diffused = np.zeros((row_num - 2, col_num - 2))
     for i in range(1, row_num - 1): 
         for j in range(1, col_num - 1): 
-            site = latExt[i][j]
-            N = latExt[i - 1][j]
-            NE = latExt[i - 1][j + 1]
-            E = latExt[i][j + 1]
-            SE = latExt[i + 1][j + 1]
-            S = latExt[i + 1][j]
-            SW = latExt[i + 1][j - 1]
-            W = latExt[i][j - 1]
-            NW = latExt[i - 1][j - 1]
-            diffused[i - 1][j - 1] = diffusion(latExt[i][j], site, N, NE, E, SE, S, SW, W, NW)
+            site = latExt[i,j]
+            N = latExt[i-1,j]
+            NE = latExt[i-1,j+1]
+            E = latExt[i,j+1]
+            SE = latExt[i+1,j+1]
+            S = latExt[i+1,j]
+            SW = latExt[i+1,j-1]
+            W = latExt[i,j-1]
+            NW = latExt[i-1,j-1]
+            diffused[i-1,j-1] = diffusion(diffusionRate, site, N, NE, E, SE, S, SW, W, NW)
     return diffused 

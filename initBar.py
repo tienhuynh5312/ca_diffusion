@@ -4,13 +4,11 @@ from animDiffusionGray import animDiffusionGray
 
 AMBIENT = 25
 HOT = 100
-COLD = 10
+COLD = 0
 
-hotSites = [(5,5)]
-coldSites = [(2,2),(7,7)]
+hotSites = [(5,0)]
+coldSites = [(2,9)]
 
-t = 50
-diffusionRate = 0.01
 def initBar(m, n, hotSites, coldSites):
     import numpy as np
     
