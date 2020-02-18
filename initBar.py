@@ -7,7 +7,7 @@ HOT = 100
 COLD = 0
 
 hotSites = [(5,0)]
-coldSites = [(2,9)]
+coldSites = [(2,5)]
 
 def initBar(m, n, hotSites, coldSites):
     import numpy as np
